@@ -1,10 +1,17 @@
 #ifndef PONCTUELLE_H
 #define PONCTUELLE_H
 
-class Ponctuelle
+#include <iostream>
+#include <string>
+#include "employee.h"
+
+class Ponctuelle : public Employee
 {
+private:
+double paye;
 public:
-    Ponctuelle();
+    Ponctuelle(std::string le_nom, int le_matricule, double paye);
+    void afficher();
     ~Ponctuelle();
 
 };
