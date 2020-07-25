@@ -12,7 +12,8 @@ double paye;
 public:
     Ponctuelle(std::string le_nom, int le_matricule, double paye);
     void afficher();
-    ~Ponctuelle();
+   
+ ~Ponctuelle();
 
 };
 

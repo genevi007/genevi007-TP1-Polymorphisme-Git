@@ -13,8 +13,8 @@ double nbHeures;
 public:
     Syndiquee(std::string le_nom, int le_matricule, double salaire, double nbHeures);
     void afficher();
+    
     ~Syndiquee();
-
 };
 
 #endif // SYNDIQUEE_H

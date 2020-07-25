@@ -25,10 +25,14 @@ std::cout << "Votre choix : ";
 std::cin >> choix;
 // Informations sur les employees.
 if (choix !=0 && choix !=4) {
-std::cout << "Quelle est le nom de famille de l'employee : ";
+std::cout << "Quel est le nom de famille de l'employee : ";
 std::cin >> nom;
-std::cout << "Quelle est le numero de matricule de l'employee : ";
-std::cin >> matricule;
+do {
+    std::cout << "Quel est le numero de matricule de l'employee : ";
+    std::cin >> matricule;
+    if(matricule < 10000 || matricule > 99999)
+    std::cout << "Erreur le numero de matricule doit etre entre 10000 et 99999."<< std::endl;
+    }while (matricule < 10000 || matricule > 99999); 
 }
 switch(choix) {
 case 1:
@@ -36,9 +40,9 @@ case 1:
 double salaire=0.0;
 double nbHeures=0.0;
 // créer une employée syndiquée
-std::cout << "Quelle est le salaire (/h) de cette employee : ";
+std::cout << "Quel est le salaire (/h) de cette employee : ";
 std::cin >> salaire;
-std::cout << "Quelle est le nombre d'heures travaillee par cette employee durant la semaine : ";
+std::cout << "Quel est le nombre d'heures travaillee par cette employee durant la semaine : ";
 std::cin >> nbHeures;
 
 employee[nb_employee] = new Syndiquee(nom,matricule,salaire,nbHeures);
@@ -50,9 +54,9 @@ case 2:
 double montant_fixe=0.0;
 int duree_contrat=0;
 // créer une employée contractuelle
-std::cout << "Quelle est le montant du contrat de cette employee : ";
+std::cout << "Quel est le montant du contrat de cette employee : ";
 std::cin >> montant_fixe;
-std::cout << "Quelle est le nombre de semaines du contrat : ";
+std::cout << "Quel est le nombre de semaines du contrat : ";
 std::cin >> duree_contrat;
 
 employee[nb_employee] = new Contractuelle(nom,matricule,duree_contrat,montant_fixe);
@@ -63,7 +67,7 @@ case 3:
 {
 double paye=0;
     // créer une employée ponctuelle
-std::cout << "Quelle est le montant de la paye de cette employee ponctuelle : ";
+std::cout << "Quel est le montant de la paye de cette employee ponctuelle : ";
 std::cin >> paye;
 
 employee[nb_employee] = new Ponctuelle(nom,matricule,paye);
@@ -76,13 +80,13 @@ case 4:
 for (int i=0 ; i<nb_employee ; i++) {
 employee[i]->afficher();
 }
-// Effacer les formes créées dynamiquement
-for (int i=0 ; i<nb_employee ; i++) {
-delete employee[i];
-}
 break;
 }
 }
 } while(choix !=0);
-// TODO quitter
+// Quitter
+// Effacer toutes les employee créées dynamiquement
+for (int i=0 ; i<nb_employee ; i++) {
+delete employee[i];
+}
 }

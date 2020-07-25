@@ -8,18 +8,19 @@ class Employee
 {
 protected:
 std::string nom;
-int matricule = 0;
+int matricule;
 
 public:
 Employee(std::string le_nom, int le_matricule);
-Employee(int le_matricule);
+
+//Employee(int le_matricule);
 
 std::string getNom();
 std::string setNom();
 int getMatricule();
 int setMatricule();
 
-virtual void afficher();
+virtual void afficher()= 0;
 
 virtual ~Employee();
 };
