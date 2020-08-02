@@ -1,25 +1,29 @@
 #include "contractuelle.h"
 
-Contractuelle::Contractuelle(std::string le_nom, int le_matricule, int duree_du_contrat, double montant_fixe_contrat): Employee(le_nom, le_matricule)
-{
-    this->duree_contrat = duree_du_contrat;
-    this->montant_fixe = montant_fixe_contrat;
+Contractuelle::Contractuelle(std::string nom, int matricule, int duree_du_contrat, double montant_fixe_contrat) : Employee(nom,matricule){
+  this->duree_contrat = duree_du_contrat;
+  this->montant_fixe = montant_fixe_contrat;
+
+  paie_brute = this->montant_fixe/this->duree_contrat;
+  impots_CA = paie_brute*this->TAUX_IMPOTS_CA;
+  impots_QC = paie_brute*this->TAUX_IMPOTS_QC;
+  paie_nette = paie_brute-impots_CA-impots_QC;
 }
 
-void Contractuelle::afficher() {
-std::cout << "Contractuelle pour ";
-std::cout << this->duree_contrat;
-std::cout << " semaines" << std::endl;
+double Contractuelle::getPaie(){
+  std::cout << nom << " " << matricule << std::endl;
+  std::cout << " Paie brute de " << paie_brute << " $"<< std::endl;
+  std::cout << " Impots CA de " << impots_CA << " $"<< std::endl; 
+  std::cout << " Impots QC de " << impots_QC << " $"<< std::endl; 
+  std::cout << " Paie nette de " << paie_nette << " $"<< std::endl;
 
-std::cout<<"Nom de l'employee contractuelle : "<<nom  <<" Matricule : " << matricule << std::endl;
-std::cout << "Elle est Contractuelle pour "<< this->duree_contrat << " semaines."<< std::endl; 
-std::cout << "Le montant total de son contrat est de "<< this->montant_fixe<<"$." << std::endl;
-std::cout << "Son salaire total brute pour la semaine est de : "<< montant_fixe/duree_contrat <<"$."<< std::endl;
-std::cout<<"****************************************"<< std::endl;
+  return paie_brute;
 }
 
-Contractuelle::~Contractuelle()
-{
-       std::cout << "Employee contractuelle detruite."<< std::endl; 
+double Contractuelle::getImpotsCA(){
+  return impots_CA;
 }
 
+double Contractuelle::getImpotsQC(){
+  return impots_QC;
+}
