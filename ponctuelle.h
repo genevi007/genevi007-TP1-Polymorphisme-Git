@@ -1,20 +1,20 @@
-#ifndef PONCTUELLE_H
-#define PONCTUELLE_H
+#ifndef __PONCTUELLE_H__
+#define __PONCTUELLE_H__
 
 #include <iostream>
 #include <string>
 #include "employee.h"
 
-class Ponctuelle : public Employee
-{
-private:
-double paye;
-public:
+class Ponctuelle : public Employee{
+  private:
+    double paye;
+  public:
     Ponctuelle(std::string le_nom, int le_matricule, double paye);
-    void afficher();
-   
- ~Ponctuelle();
-
+    ~Ponctuelle(){std::cout << " - Ponctuelle détruite!"<< std::endl;}
+    
+    double getPaie();
+    double getImpotsCA();
+    double getImpotsQC();
 };
 
-#endif // PONCTUELLE_H
+#endif
