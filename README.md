@@ -82,7 +82,7 @@ que l'effort demandé pour ce travail pratique vous semble adéquat ?
 
 6. Livrable à remettre, procédure de remise et retard
 Vous devez remettre un fichier DOCX, ODT ou PDF sur LÉA indiquant les noms et matricules des membres de votre équipe ainsi que l'adresse de votre projet GitHub.
-Seule une remise électronique est exigée. Il n'y a pas de rapports papiers à remettre. La remise doit se faire sur LÉA, avant le lundi 10 août 2020, midi. Si jamais il y avait des problèmes avec LÉA, envoyez votre fichier par courriel au math.lavallee@gmail.com .
+Seule une remise électronique est exigée. Il n'y a pas de rapports papiers à remettre. La remise doit se faire sur LÉA, avant le lundi 10 août 2020, midi. Si jamais il y avait des problèmes avec LÉA, envoyez votre fichier par courriel au m***.*******e@gmail.com .
 
 7. Barème de correction
 Ce travail pratique est noté sur 20 points et vaut 20% de la note finale.
