@@ -25,11 +25,7 @@ int main() {
     std::cout << std::endl << "Votre choix : ";
     std::cin >> choix;
 
-    /*if(choix!=0 && choix!=1 && choix!=2 && choix!=3 && choix!=4){
-      std::cout << std::endl << " Mauvaix choix, Veuillez ressayer!" << std::endl;
-    }*/
-
-    if (choix!=0 && choix!=4) {       // Informations sur les employéEs.
+    if (choix==1 || choix==2 || choix==3)  {       // Informations sur les employéEs.
       std::cout << " Nom de l'employéE : ";
       std::cin >> nom;
       do{
@@ -38,8 +34,13 @@ int main() {
         if(matricule<10000 || matricule>99999)
         std::cout << "Erreur! Le numéro de matricule doit-être entre 10000 et 99999." << std::endl;
       }while (matricule<10000 || matricule>99999); 
-    }
-
+    }else if(choix==4 && nb_employee==0)
+      std::cout << std::endl << " *ERREUR! Au moins unE employéE doit exister" << std::endl;
+else if (choix==0) {
+      std::cout << std::endl << " Bye! Bye!" << std::endl;
+    }else if (choix <0 && choix>5)
+      std::cout << std::endl << " *ERREUR! Faites un choix entre 0 et 5." << std::endl;
+      
     switch(choix){
       case 1:{                // EmployéE SyndiquéE
         double salaire=0;
@@ -90,9 +91,6 @@ int main() {
         }
         break;
       }
-      default:
-        std::cout << std::endl << " Mauvaix choix, Veuillez ressayer!" << std::endl;
-        break;
     }
   }while(choix !=0);
 
