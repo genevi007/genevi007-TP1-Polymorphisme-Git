@@ -36,10 +36,10 @@ int main() {
       }while (matricule<10000 || matricule>99999); 
     }else if(choix==4 && nb_employee==0)
       std::cout << std::endl << " *ERREUR! Au moins unE employéE doit exister" << std::endl;
-else if (choix==0) {
+    else if (choix==0) 
       std::cout << std::endl << " Bye! Bye!" << std::endl;
-    }else if (choix <0 && choix>5)
-      std::cout << std::endl << " *ERREUR! Faites un choix entre 0 et 5." << std::endl;
+    else if (choix <0 && choix>4)
+      std::cout << std::endl << " *ERREUR! Faites un choix entre 0 et 4." << std::endl;
       
     switch(choix){
       case 1:{                // EmployéE SyndiquéE
